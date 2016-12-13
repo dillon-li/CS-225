@@ -1,0 +1,27 @@
+Monad Autograder
+Testing lab_race at 2013-11-19 17:16:31
+
+"Computers are like Old Testament gods; lots of rules and no mercy." ~ Joseph Campbell
+
+Setting up test environment...
+Compiling...
+================================================================
+collage.cpp: In member function 'void Collage::drawByCoordinatesSerial(PNG*)':
+collage.cpp:86: error: invalid use of member (did you forget the '&' ?)
+collage.cpp:86: error: invalid use of member (did you forget the '&' ?)
+collage.cpp: In member function 'void Collage::drawByCoordinatesParallel(PNG*)':
+collage.cpp:113: error: invalid use of member (did you forget the '&' ?)
+collage.cpp:113: error: invalid use of member (did you forget the '&' ?)
+make: *** [collage.o] Error 1
+
+
+exec("./proxy") failed: No such file or directory
+Running tests...
+================================================================
+Could not execute test cases
+
+
+Total score...
+================================================================
+TOTAL SCORE: 0
+

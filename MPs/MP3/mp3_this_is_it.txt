@@ -1,0 +1,187 @@
+Monad Autograder
+Testing mp3 at 2013-12-08 19:27:28
+
+"C++ : Where friends have access to your private members." ~ Gavin Russell Baker
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+testInsertFront  . . . . . . . . . . [2 pts]  - passed
+testInsertBack . . . . . . . . . . . [2 pts]  - passed
+testDestructor10 (valgrind)  . . . . [3 pts]  - passed
+testDestructor37 (valgrind)  . . . . [3 pts]  - passed
+testReverse20_size . . . . . . . . . [1 pts]  - passed
+testReverse20_forward  . . . . . . . [1 pts]  - passed
+testReverse20_backward . . . . . . . [1 pts]  - passed
+testReverse37_size . . . . . . . . . [1 pts]  - passed
+testReverse37_forward  . . . . . . . [1 pts]  - passed
+testReverse37_backward . . . . . . . [1 pts]  - passed
+testReverseEmpty (valgrind)  . . . . [1 pts]  - passed
+testReverse20_memory (valgrind)  . . [1 pts]  - passed
+testReverseNth20_2_size  . . . . . . [1 pts]  - passed
+testReverseNth20_2_forward . . . . . [1 pts]  - passed
+testReverseNth20_2_backward  . . . . [1 pts]  - passed
+testReverseNth37_4_size  . . . . . . [1 pts]  - passed
+testReverseNth37_4_forward . . . . . [1 pts]  - passed
+testReverseNth37_4_backward  . . . . [1 pts]  - passed
+testReverseNth37_37  . . . . . . . . [1 pts]  - passed
+testReverseNth37_4_memory (valgrind) [1 pts]  - passed
+testReverseNthEmpty (valgrind) . . . [1 pts]  - FAILED: ==21968==    by 0x405354: proxy::RunTests::execute_by_mode() (proxy.cpp:223)
+==21968==    
+testWaterfall4_size  . . . . . . . . [1 pts]  - passed
+testWaterfall4_forward . . . . . . . [1 pts]  - passed
+testWaterfall4_backward  . . . . . . [2 pts]  - passed
+testWaterfall7_size  . . . . . . . . [1 pts]  - passed
+testWaterfall7_forward . . . . . . . [1 pts]  - passed
+testWaterfall7_backward  . . . . . . [2 pts]  - passed
+testWaterfall12_size . . . . . . . . [1 pts]  - passed
+testWaterfall12_forward  . . . . . . [1 pts]  - passed
+testWaterfall12_backward . . . . . . [2 pts]  - passed
+testWaterfall7_memory (valgrind) . . [3 pts]  - passed
+testWaterfall7_empty (valgrind)  . . [3 pts]  - passed
+testSplit5_this_size . . . . . . . . [1 pts]  - passed
+testSplit5_this_forward  . . . . . . [1 pts]  - passed
+testSplit5_this_backward . . . . . . [1 pts]  - passed
+testSplit5_split_size  . . . . . . . [1 pts]  - passed
+testSplit5_split_forward . . . . . . [1 pts]  - passed
+testSplit5_split_backward  . . . . . [1 pts]  - passed
+testSplit5_mem (valgrind)  . . . . . [3 pts]  - passed
+testMerge_size . . . . . . . . . . . [1 pts]  - passed
+testMerge_forward  . . . . . . . . . [1 pts]  - passed
+testMerge_backward . . . . . . . . . [1 pts]  - passed
+testMerge_mem (valgrind) . . . . . . [3 pts]  - passed
+testSort16p_s  . . . . . . . . . . . [1 pts]  - passed
+testSort16p_f  . . . . . . . . . . . [2 pts]  - passed
+testSort16p_b  . . . . . . . . . . . [2 pts]  - passed
+testSort20p_s  . . . . . . . . . . . [1 pts]  - passed
+testSort20p_f  . . . . . . . . . . . [2 pts]  - passed
+testSort20p_b  . . . . . . . . . . . [2 pts]  - passed
+testSort27p_s  . . . . . . . . . . . [1 pts]  - passed
+testSort27p_f  . . . . . . . . . . . [2 pts]  - passed
+testSort27p_b  . . . . . . . . . . . [2 pts]  - passed
+testSortEmpty  . . . . . . . . . . . [5 pts]  - passed
+testSort259p_s . . . . . . . . . . . [1 pts]  - passed
+testSort259p_f . . . . . . . . . . . [2 pts]  - passed
+testSort259p_b . . . . . . . . . . . [2 pts]  - passed
+testSortMemLeak (valgrind) . . . . . [5 pts]  - passed
+testSortNlogN  . . . . . . . . . . . [10 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 99
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+testReverseNthEmpty (run under valgrind) [1 points]
+Result: FAILED: ==21968==    by 0x405354: proxy::RunTests::execute_by_mode() (proxy.cpp:223)
+==21968==    
+Took unknown time (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Running testReverseNthEmpty [worth 1 points, output below]
+==21971== Invalid read of size 8
+==21971==    at 0x41B810: List<int>::reverseNth(int) (list.cpp:168)
+==21971==    by 0x41854F: testReverseNth(int, int, check_t, bool) (unit_tests.cpp:267)
+==21971==    by 0x41888E: proxy_test::testReverseNthEmpty(util::sizedpipestream<512ul>&) (unit_tests.cpp:295)
+==21971==    by 0x407AA1: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==21971==    by 0x4068DB: proxy::test_execution::child_test() (proxy.cpp:549)
+==21971==    by 0x4062FA: proxy::test_execution::child() (proxy.cpp:434)
+==21971==    by 0x4094FC: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (proxy.cpp:508)
+==21971==    by 0x40675F: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (proxy.cpp:489)
+==21971==    by 0x4055E4: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (proxy.cpp:250)
+==21971==    by 0x4054EC: proxy::RunTests::run_single_test(char const*) (proxy.cpp:238)
+==21971==    by 0x405354: proxy::RunTests::execute_by_mode() (proxy.cpp:223)
+==21971==    by 0x405305: proxy::RunTests::execute() (proxy.cpp:214)
+==21971==  Address 0x0 is not stack'd, malloc'd or (recently) free'd
+==21971== 
+==21971== 
+==21971== Process terminating with default action of signal 11 (SIGSEGV)
+==21971==  Access not within mapped region at address 0x0
+==21971==    at 0x41B810: List<int>::reverseNth(int) (list.cpp:168)
+==21971==    by 0x41854F: testReverseNth(int, int, check_t, bool) (unit_tests.cpp:267)
+==21971==    by 0x41888E: proxy_test::testReverseNthEmpty(util::sizedpipestream<512ul>&) (unit_tests.cpp:295)
+==21971==    by 0x407AA1: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==21971==    by 0x4068DB: proxy::test_execution::child_test() (proxy.cpp:549)
+==21971==    by 0x4062FA: proxy::test_execution::child() (proxy.cpp:434)
+==21971==    by 0x4094FC: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (proxy.cpp:508)
+==21971==    by 0x40675F: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (proxy.cpp:489)
+==21971==    by 0x4055E4: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (proxy.cpp:250)
+==21971==    by 0x4054EC: proxy::RunTests::run_single_test(char const*) (proxy.cpp:238)
+==21971==    by 0x405354: proxy::RunTests::execute_by_mode() (proxy.cpp:223)
+==21971==    by 0x405305: proxy::RunTests::execute() (proxy.cpp:214)
+==21971==  If you believe this happened as a result of a stack
+==21971==  overflow in your program's main thread (unlikely but
+==21971==  possible), you can try to increase the size of the
+==21971==  main thread stack using the --main-stacksize= flag.
+==21971==  The main thread stack size used in this run was 10485760.
+==21968== 31 bytes in 1 blocks are possibly lost in loss record 2 of 11
+==21968==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==21968==    by 0x332D49C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==21968==    by 0x332D49CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==21968==    by 0x332D49CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==21968==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
+==21968==    by 0x40776D: __static_initialization_and_destruction_0(int, int) (proxy.cpp:31)
+==21968==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
+==21968==    by 0x4240F5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==21968==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==21968== 
+==21968== 33 bytes in 1 blocks are possibly lost in loss record 3 of 11
+==21968==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==21968==    by 0x332D49C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==21968==    by 0x332D49CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==21968==    by 0x332D49CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==21968==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
+==21968==    by 0x407781: __static_initialization_and_destruction_0(int, int) (proxy.cpp:37)
+==21968==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
+==21968==    by 0x4240F5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==21968==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==21968== 
+==21968== 37 bytes in 1 blocks are possibly lost in loss record 4 of 11
+==21968==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==21968==    by 0x332D49C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==21968==    by 0x332D49CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==21968==    by 0x332D49CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==21968==    by 0x405035: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (proxy.cpp:165)
+==21968==    by 0x407795: __static_initialization_and_destruction_0(int, int) (proxy.cpp:43)
+==21968==    by 0x4077AA: global constructors keyed to ___monad_output_check_equals_adder (proxy.cpp:757)
+==21968==    by 0x4240F5: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==21968==    by 0x403782: ??? (in /dev/shm/geigle1/monad/mp3_grade/proxy)
+==21968== 
+==21968== 49 bytes in 1 blocks are possibly lost in loss record 9 of 11
+==21968==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==21968==    by 0x332D49C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==21968==    by 0x332D49DD89: std::string::_M_mutate(unsigned long, unsigned long, unsigned long) (in /usr/lib64/libstdc++.so.6.0.13)
+==21968==    by 0x332D49DF4B: std::string::_M_replace_safe(unsigned long, unsigned long, char const*, unsigned long) (in /usr/lib64/libstdc++.so.6.0.13)
+==21968==    by 0x4093AF: util::sizedpipestream<512ul>::operator>>(std::string&) (pipestream.cpp:198)
+==21968==    by 0x4063A1: proxy::test_execution::parent() (proxy.cpp:448)
+==21968==    by 0x409515: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (proxy.cpp:513)
+==21968==    by 0x40675F: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (proxy.cpp:489)
+==21968==    by 0x4055E4: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (proxy.cpp:250)
+==21968==    by 0x4054EC: proxy::RunTests::run_single_test(char const*) (proxy.cpp:238)
+==21968==    by 0x405354: proxy::RunTests::execute_by_mode() (proxy.cpp:223)
+==21968==    by 0x405305: proxy::RunTests::execute() (proxy.cpp:214)
+==21968== 
+==21968== 132 bytes in 1 blocks are possibly lost in loss record 10 of 11
+==21968==    at 0x4A05FDE: malloc (vg_replace_malloc.c:236)
+==21968==    by 0x332D4BB746: __cxa_allocate_exception (in /usr/lib64/libstdc++.so.6.0.13)
+==21968==    by 0x40959F: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (proxy.cpp:522)
+==21968==    by 0x40675F: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (proxy.cpp:489)
+==21968==    by 0x4055E4: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (proxy.cpp:250)
+==21968==    by 0x4054EC: proxy::RunTests::run_single_test(char const*) (proxy.cpp:238)
+==21968==    by 0x405354: proxy::RunTests::execute_by_mode() (proxy.cpp:223)
+==21968==    b
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 99
+

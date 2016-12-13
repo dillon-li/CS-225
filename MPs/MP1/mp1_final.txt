@@ -1,0 +1,33 @@
+Monad Autograder
+Testing mp1 at 2013-09-12 14:17:57
+
+"If you just rely on one model, you tend to amputate reality to make it fit your model." ~ David Brooks
+
+Setting up test environment...
+Compiling...
+================================================================
+In file included from png.h:25,
+                 from unit_tests.cpp:9:
+rgbapixel.h:1: error: redefinition of 'class RGBAPixel'
+rgbapixel.h:2: error: previous definition of 'class RGBAPixel'
+In file included from png.h:25,
+                 from unit_tests.cpp:9:
+rgbapixel.h:1: error: redefinition of 'class RGBAPixel'
+rgbapixel.h:2: error: previous definition of 'class RGBAPixel'
+ld: no input files
+g++: unit_tests.o: No such file or directory
+make: *** [proxy] Error 1
+g++ -c -g -O0 -Wall -Werror main.cpp
+g++ main.o png.o rgbapixel.o -lpng -o mp1
+
+
+exec("./proxy") failed: No such file or directory
+Running tests...
+================================================================
+Could not execute test cases
+
+
+Total score...
+================================================================
+TOTAL SCORE: 0
+

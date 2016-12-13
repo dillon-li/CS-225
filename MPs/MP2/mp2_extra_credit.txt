@@ -1,0 +1,26 @@
+Monad Autograder
+Testing mp2.1 at 2013-09-11 23:57:34
+
+"If you can't remember a formula during the exam it's probably not important." ~ Prof. Chengxiang Zhai
+
+Setting up test environment...
+cp: cannot stat `/dev/shm/geigle1/monad/fa13-cs225/li160/mp2/scene.h': No such file or directory
+cp: cannot stat `/dev/shm/geigle1/monad/fa13-cs225/li160/mp2/scene.cpp': No such file or directory
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+InvertColorsEven  . . [33 pts] - passed
+FlipLeftEven  . . . . [17 pts] - passed
+FlipLeftOdd . . . . . [17 pts] - passed
+AdjustBrightnessEven  [11 pts] - passed
+AdjustBrightnessEven2 [11 pts] - passed
+AdjustBrightnessEven3 [11 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 100
+

@@ -1,0 +1,50 @@
+Monad Autograder
+Testing lab_parallel at 2013-09-30 07:55:49
+
+"Anything that can go wrong will go wrong." ~ Murphy's Law
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+testConcurrency_flip . . . . . . . . . [26 pts] - FAILED: unit_tests.cpp:52: Concurrency value is too low: 1.000
+testConcurrency_remove . . . . . . . . [26 pts] - passed
+testCorrectnessFlip_03 . . . . . . . . [12 pts] - passed
+testCorrectnessFlip_04 . . . . . . . . [12 pts] - passed
+testCorrectnessRemoveRedComponent_03 . [12 pts] - passed
+testCorrectnessRemoveGreenComponent_04 [12 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 74
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+testConcurrency_flip [26 points]
+Result: FAILED: unit_tests.cpp:52: Concurrency value is too low: 1.000
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+Warning: A symbol file is not found. The call stack passing through `/dev/shm/geigle1/monad/lab_parallel_grade/tester' module may be incorrect.
+Using result path `/dev/shm/geigle1/monad/lab_parallel_grade/r000cc'
+Executing actions  0 %                                                         Executing actions  0 % Finalizing results                                      Executing actions  0 % Finalizing the result                                   Executing actions  0 % Clearing the database                                   Executing actions  8 % Clearing the database                                   Executing actions  8 % Loading raw data to the database                        Executing actions  8 % Loading data files                                      Executing actions  8 % Loading '18845-18850.0.trace' file                      Executing actions 13 % Loading '18845-18850.0.trace' file                      Executing actions 14 % Loading '18845-18850.0.trace' file                      Executing actions 14 % Converting API Events to Waits                          Executing actions 15 % Converting API Events to Waits                          Executing actions 16 % Converting API Events to Waits                          Executing actions 16 % Loading data files                                      Executing actions 16 % Processing profile metrics and debug information        Executing actions 20 % Processing profile metrics and debug information        Executing actions 24 % Processing profile metrics and debug information        Executing actions 24 % Precomputing frequently used data                       Executing actions 25 % Precomputing frequently used data                       Executing actions 26 % Precomputing frequently used data                       Executing actions 27 % Precomputing frequently used data                       Executing actions 28 % Precomputing frequently used data                       Executing actions 29 % Precomputing frequently used data                       Executing actions 30 % Precomputing frequently used data                       Executing actions 30 % Updating precomputed scalar metrics                     Executing actions 32 % Updating precomputed scalar metrics                     Executing actions 32 % Setting data model parameters                           Executing actions 33 % Setting data model parameters                           Executing actions 34 % Setting data model parameters                           Executing actions 34 % Setting data model parameters                           Executing actions 34 % Resolving module symbols                                Executing actions 34 % Resolving information for `libz.so.1.2.3'               
+Warning: Cannot locate symbols for file `/lib64/libz.so.1.2.3'.
+Executing actions 34 % Resolving information for `libc-2.12.so'                
+Warning: Cannot locate symbols for file `/lib64/libc-2.12.so'.
+Executing actions 35 % Resolving information for `libc-2.12.so'                Executing actions 35 % Resolving information for `libpng12.so.0.49.0'          
+Warning: Cannot locate symbols for file `/usr/lib64/libpng12.so.0.49.0'.
+Executing actions 36 % Resolving information for `libpng12.so.0.49.0'          Executing actions 36 % Resolving information for `tester'                      Executing actions 37 % Resolving information for `tester'                      Executing actions 38 % Resolving information for `tester'                      Executing actions 39 % Resolving information for `tester'                      Executing actions 40 % Resolving information for `tester'                      Executing actions 41 % Resolving information for `tester'                      Executing actions 42 % Resolving information for `tester'                      Executing actions 42 % Discarding redundant overtime data                      Executing actions 44 % Discarding redundant overtime data                      Executing actions 44 % Saving the result                                       Executing actions 46 % Saving the result                                       Executing actions 48 % Saving the result                                       Executing actions 50 % Saving the result                                       Executing actions 50 % Generating a report                                     Executing actions 50 % Setting knob values                                     Executing actions 50 % Generating a report                                     Executing actions 75 % Generating a report                                     Executing actions 100 % Generating a report                                    Executing actions 100 % done                                                   
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 74
+

@@ -1,0 +1,103 @@
+Monad Autograder
+Testing lab_hash at 2013-11-18 14:15:25
+
+"If at first you don't succeed, that's one data point." ~ Randall Munroe
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+testRemoveEASY . [6 pts]  - passed
+testRemoveHard . [10 pts] - passed
+testResizeOnce . [7 pts]  - FAILED: unit_tests.cpp:75: Assertion (hashTable.tableSize() >= val / 0.7) failed
+testResizeAll  . [11 pts] - FAILED: unit_tests.cpp:98: Assertion (hashTable.tableSize() >= strings.size() / 0.7) failed
+testInsertEasy . [6 pts]  - FAILED: unit_tests.cpp:119: Did not insert key: 'john'
+testInsertHard . [10 pts] - FAILED: unit_tests.cpp:142: Did not insert properly key: 'shells'
+testAnagramsSC . [8 pts]  - FAILED: unit_tests.cpp:164: Found too many anagrams
+testAnagramsLP . [8 pts]  - FAILED: unit_tests.cpp:164: Found too many anagrams
+testWordCountSC  [8 pts]  - FAILED: unit_tests.cpp:198: Did not find all words
+testWordCountLP  [8 pts]  - FAILED: unit_tests.cpp:198: Did not find all words
+testLogfileParse [18 pts] - FAILED: unit_tests.cpp:240: Did not find enough URLs
+
+
+Total score...
+================================================================
+TOTAL SCORE: 16
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+testResizeOnce [7 points]
+Result: FAILED: unit_tests.cpp:75: Assertion (hashTable.tableSize() >= val / 0.7) failed
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testResizeAll [11 points]
+Result: FAILED: unit_tests.cpp:98: Assertion (hashTable.tableSize() >= strings.size() / 0.7) failed
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+26
+
+----------------------------------------------------------------
+testInsertEasy [6 points]
+Result: FAILED: unit_tests.cpp:119: Did not insert key: 'john'
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testInsertHard [10 points]
+Result: FAILED: unit_tests.cpp:142: Did not insert properly key: 'shells'
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testAnagramsSC [8 points]
+Result: FAILED: unit_tests.cpp:164: Found too many anagrams
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testAnagramsLP [8 points]
+Result: FAILED: unit_tests.cpp:164: Found too many anagrams
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testWordCountSC [8 points]
+Result: FAILED: unit_tests.cpp:198: Did not find all words
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testWordCountLP [8 points]
+Result: FAILED: unit_tests.cpp:198: Did not find all words
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testLogfileParse [18 points]
+Result: FAILED: unit_tests.cpp:240: Did not find enough URLs
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 16
+

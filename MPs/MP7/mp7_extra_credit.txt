@@ -1,0 +1,7 @@
+Monad Autograder
+Testing mp7.1 at 2013-12-04 00:38:02
+
+"That's legit as shit." ~ Rick Barber
+
+Setting up test environment...
+Error: /dev/shm/geigle1/monad/fa13-cs225/li160/mp7/dsets.h does not exist.

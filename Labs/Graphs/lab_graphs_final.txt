@@ -1,0 +1,7 @@
+Monad Autograder
+Testing lab_graphs at 2013-12-09 05:44:06
+
+"The most amazing achievement of the computer software industry is its continuing cancellation of the steady and staggering gains made by the computer hardware industry." ~ Henry Petroski
+
+Setting up test environment...
+Error: /dev/shm/geigle1/monad/fa13-cs225/li160/lab_graphs/dsets.h does not exist.

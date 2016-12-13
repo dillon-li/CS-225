@@ -1,0 +1,7 @@
+Monad Autograder
+Testing mp2 at 2013-09-20 11:10:16
+
+"You look at their elbows, they actually have many good theoretical elbows." ~ Prof. Jiawei Han
+
+Setting up test environment...
+Error: /dev/shm/geigle1/monad/fa13-cs225/li160/mp2/scene.h does not exist.

@@ -1,0 +1,177 @@
+Monad Autograder
+Testing mp5 at 2013-12-09 04:29:02
+
+"Measuring programming progress by lines of code is like measuring aircraft building progress by weight." ~ Bill Gates
+
+Setting up test environment...
+Compiling...
+================================================================
+unit_tests.cpp: In function 'void proxy_test::test_getPixel_1(util::pipestream&)':
+unit_tests.cpp:177: error: 'class Quadtree' has no member named 'getPixel'
+unit_tests.cpp: In function 'void proxy_test::test_getPixel_2(util::pipestream&)':
+unit_tests.cpp:188: error: 'class Quadtree' has no member named 'getPixel'
+unit_tests.cpp: In function 'void proxy_test::test_getPixel_3(util::pipestream&)':
+unit_tests.cpp:199: error: 'class Quadtree' has no member named 'getPixel'
+unit_tests.cpp: In function 'void proxy_test::test_getPixel_4(util::pipestream&)':
+unit_tests.cpp:210: error: 'class Quadtree' has no member named 'getPixel'
+unit_tests.cpp: In function 'void proxy_test::test_decompress_unpruned_1(util::pipestream&)':
+unit_tests.cpp:218: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::test_decompress_unpruned_2(util::pipestream&)':
+unit_tests.cpp:226: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::test_decompress_unpruned_3(util::pipestream&)':
+unit_tests.cpp:235: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::test_decompress_unpruned_4(util::pipestream&)':
+unit_tests.cpp:243: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'RGBAPixel time_getPixel(Quadtree*)':
+unit_tests.cpp:271: error: 'class Quadtree' has no member named 'getPixel'
+unit_tests.cpp: In function 'void time_decompress(Quadtree*)':
+unit_tests.cpp:276: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::test_clockwiseRotate_1(util::pipestream&)':
+unit_tests.cpp:322: error: 'class Quadtree' has no member named 'clockwiseRotate'
+unit_tests.cpp: In function 'void proxy_test::test_clockwiseRotate_2(util::pipestream&)':
+unit_tests.cpp:330: error: 'class Quadtree' has no member named 'clockwiseRotate'
+unit_tests.cpp:331: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::test_clockwiseRotate_3(util::pipestream&)':
+unit_tests.cpp:340: error: 'class Quadtree' has no member named 'clockwiseRotate'
+unit_tests.cpp:341: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::test_clockwiseRotate_4(util::pipestream&)':
+unit_tests.cpp:350: error: 'class Quadtree' has no member named 'clockwiseRotate'
+unit_tests.cpp:351: error: 'class Quadtree' has no member named 'clockwiseRotate'
+unit_tests.cpp:352: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::test_prune_1(util::pipestream&)':
+unit_tests.cpp:360: error: 'class Quadtree' has no member named 'prune'
+unit_tests.cpp: In function 'void proxy_test::test_prune_2(util::pipestream&)':
+unit_tests.cpp:368: error: 'class Quadtree' has no member named 'prune'
+unit_tests.cpp: In function 'void proxy_test::test_prune_3(util::pipestream&)':
+unit_tests.cpp:376: error: 'class Quadtree' has no member named 'prune'
+unit_tests.cpp: In function 'void proxy_test::test_prune_4(util::pipestream&)':
+unit_tests.cpp:384: error: 'class Quadtree' has no member named 'prune'
+unit_tests.cpp:385: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::test_prune_copy(util::pipestream&)':
+unit_tests.cpp:394: error: 'class Quadtree' has no member named 'prune'
+unit_tests.cpp: In function 'void proxy_test::test_prune_rotate(util::pipestream&)':
+unit_tests.cpp:403: error: 'class Quadtree' has no member named 'prune'
+unit_tests.cpp:404: error: 'class Quadtree' has no member named 'clockwiseRotate'
+unit_tests.cpp:405: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::test_prune_getPixel(util::pipestream&)':
+unit_tests.cpp:414: error: 'class Quadtree' has no member named 'prune'
+unit_tests.cpp:416: error: 'class Quadtree' has no member named 'getPixel'
+unit_tests.cpp: In function 'void proxy_test::test_pruneSize_1(util::pipestream&)':
+unit_tests.cpp:422: error: 'class Quadtree' has no member named 'pruneSize'
+unit_tests.cpp: In function 'void proxy_test::test_pruneSize_2(util::pipestream&)':
+unit_tests.cpp:429: error: 'class Quadtree' has no member named 'pruneSize'
+unit_tests.cpp: In function 'void proxy_test::test_pruneSize_3(util::pipestream&)':
+unit_tests.cpp:436: error: 'class Quadtree' has no member named 'pruneSize'
+unit_tests.cpp: In function 'void proxy_test::test_pruneSize_4(util::pipestream&)':
+unit_tests.cpp:443: error: 'class Quadtree' has no member named 'pruneSize'
+unit_tests.cpp: In function 'void proxy_test::test_pruneSize_5(util::pipestream&)':
+unit_tests.cpp:450: error: 'class Quadtree' has no member named 'pruneSize'
+unit_tests.cpp: In function 'void proxy_test::test_idealPrune_1(util::pipestream&)':
+unit_tests.cpp:457: error: 'class Quadtree' has no member named 'idealPrune'
+unit_tests.cpp: In function 'void proxy_test::test_idealPrune_2(util::pipestream&)':
+unit_tests.cpp:465: error: 'class Quadtree' has no member named 'idealPrune'
+unit_tests.cpp: In function 'void proxy_test::test_idealPrune_3(util::pipestream&)':
+unit_tests.cpp:472: error: 'class Quadtree' has no member named 'idealPrune'
+unit_tests.cpp: In function 'void proxy_test::test_idealPrune_4(util::pipestream&)':
+unit_tests.cpp:479: error: 'class Quadtree' has no member named 'idealPrune'
+unit_tests.cpp: In function 'void proxy_test::val_clockwiseRotate(util::pipestream&)':
+unit_tests.cpp:487: error: 'class Quadtree' has no member named 'clockwiseRotate'
+unit_tests.cpp:488: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::val_prune(util::pipestream&)':
+unit_tests.cpp:498: error: 'class Quadtree' has no member named 'prune'
+unit_tests.cpp:499: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::val_idealPrune(util::pipestream&)':
+unit_tests.cpp:509: error: 'class Quadtree' has no member named 'pruneSize'
+unit_tests.cpp:509: error: 'class Quadtree' has no member named 'idealPrune'
+unit_tests.cpp: In function 'void proxy_test::test_getPixel_1(util::pipestream&)':
+unit_tests.cpp:177: error: 'class Quadtree' has no member named 'getPixel'
+unit_tests.cpp: In function 'void proxy_test::test_getPixel_2(util::pipestream&)':
+unit_tests.cpp:188: error: 'class Quadtree' has no member named 'getPixel'
+unit_tests.cpp: In function 'void proxy_test::test_getPixel_3(util::pipestream&)':
+unit_tests.cpp:199: error: 'class Quadtree' has no member named 'getPixel'
+unit_tests.cpp: In function 'void proxy_test::test_getPixel_4(util::pipestream&)':
+unit_tests.cpp:210: error: 'class Quadtree' has no member named 'getPixel'
+unit_tests.cpp: In function 'void proxy_test::test_decompress_unpruned_1(util::pipestream&)':
+unit_tests.cpp:218: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::test_decompress_unpruned_2(util::pipestream&)':
+unit_tests.cpp:226: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::test_decompress_unpruned_3(util::pipestream&)':
+unit_tests.cpp:235: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::test_decompress_unpruned_4(util::pipestream&)':
+unit_tests.cpp:243: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'RGBAPixel time_getPixel(Quadtree*)':
+unit_tests.cpp:271: error: 'class Quadtree' has no member named 'getPixel'
+unit_tests.cpp: In function 'void time_decompress(Quadtree*)':
+unit_tests.cpp:276: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::test_clockwiseRotate_1(util::pipestream&)':
+unit_tests.cpp:322: error: 'class Quadtree' has no member named 'clockwiseRotate'
+unit_tests.cpp: In function 'void proxy_test::test_clockwiseRotate_2(util::pipestream&)':
+unit_tests.cpp:330: error: 'class Quadtree' has no member named 'clockwiseRotate'
+unit_tests.cpp:331: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::test_clockwiseRotate_3(util::pipestream&)':
+unit_tests.cpp:340: error: 'class Quadtree' has no member named 'clockwiseRotate'
+unit_tests.cpp:341: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::test_clockwiseRotate_4(util::pipestream&)':
+unit_tests.cpp:350: error: 'class Quadtree' has no member named 'clockwiseRotate'
+unit_tests.cpp:351: error: 'class Quadtree' has no member named 'clockwiseRotate'
+unit_tests.cpp:352: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::test_prune_1(util::pipestream&)':
+unit_tests.cpp:360: error: 'class Quadtree' has no member named 'prune'
+unit_tests.cpp: In function 'void proxy_test::test_prune_2(util::pipestream&)':
+unit_tests.cpp:368: error: 'class Quadtree' has no member named 'prune'
+unit_tests.cpp: In function 'void proxy_test::test_prune_3(util::pipestream&)':
+unit_tests.cpp:376: error: 'class Quadtree' has no member named 'prune'
+unit_tests.cpp: In function 'void proxy_test::test_prune_4(util::pipestream&)':
+unit_tests.cpp:384: error: 'class Quadtree' has no member named 'prune'
+unit_tests.cpp:385: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::test_prune_copy(util::pipestream&)':
+unit_tests.cpp:394: error: 'class Quadtree' has no member named 'prune'
+unit_tests.cpp: In function 'void proxy_test::test_prune_rotate(util::pipestream&)':
+unit_tests.cpp:403: error: 'class Quadtree' has no member named 'prune'
+unit_tests.cpp:404: error: 'class Quadtree' has no member named 'clockwiseRotate'
+unit_tests.cpp:405: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::test_prune_getPixel(util::pipestream&)':
+unit_tests.cpp:414: error: 'class Quadtree' has no member named 'prune'
+unit_tests.cpp:416: error: 'class Quadtree' has no member named 'getPixel'
+unit_tests.cpp: In function 'void proxy_test::test_pruneSize_1(util::pipestream&)':
+unit_tests.cpp:422: error: 'class Quadtree' has no member named 'pruneSize'
+unit_tests.cpp: In function 'void proxy_test::test_pruneSize_2(util::pipestream&)':
+unit_tests.cpp:429: error: 'class Quadtree' has no member named 'pruneSize'
+unit_tests.cpp: In function 'void proxy_test::test_pruneSize_3(util::pipestream&)':
+unit_tests.cpp:436: error: 'class Quadtree' has no member named 'pruneSize'
+unit_tests.cpp: In function 'void proxy_test::test_pruneSize_4(util::pipestream&)':
+unit_tests.cpp:443: error: 'class Quadtree' has no member named 'pruneSize'
+unit_tests.cpp: In function 'void proxy_test::test_pruneSize_5(util::pipestream&)':
+unit_tests.cpp:450: error: 'class Quadtree' has no member named 'pruneSize'
+unit_tests.cpp: In function 'void proxy_test::test_idealPrune_1(util::pipestream&)':
+unit_tests.cpp:457: error: 'class Quadtree' has no member named 'idealPrune'
+unit_tests.cpp: In function 'void proxy_test::test_idealPrune_2(util::pipestream&)':
+unit_tests.cpp:465: error: 'class Quadtree' has no member named 'idealPrune'
+unit_tests.cpp: In function 'void proxy_test::test_idealPrune_3(util::pipestream&)':
+unit_tests.cpp:472: error: 'class Quadtree' has no member named 'idealPrune'
+unit_tests.cpp: In function 'void proxy_test::test_idealPrune_4(util::pipestream&)':
+unit_tests.cpp:479: error: 'class Quadtree' has no member named 'idealPrune'
+unit_tests.cpp: In function 'void proxy_test::val_clockwiseRotate(util::pipestream&)':
+unit_tests.cpp:487: error: 'class Quadtree' has no member named 'clockwiseRotate'
+unit_tests.cpp:488: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::val_prune(util::pipestream&)':
+unit_tests.cpp:498: error: 'class Quadtree' has no member named 'prune'
+unit_tests.cpp:499: error: 'class Quadtree' has no member named 'decompress'
+unit_tests.cpp: In function 'void proxy_test::val_idealPrune(util::pipestream&)':
+unit_tests.cpp:509: error: 'class Quadtree' has no member named 'pruneSize'
+unit_tests.cpp:509: error: 'class Quadtree' has no member named 'idealPrune'
+ld: no input files
+g++: unit_tests.o: No such file or directory
+make: *** [proxy] Error 1
+
+
+exec("./proxy") failed: No such file or directory
+Running tests...
+================================================================
+Could not execute test cases
+
+
+Total score...
+================================================================
+TOTAL SCORE: 0
+

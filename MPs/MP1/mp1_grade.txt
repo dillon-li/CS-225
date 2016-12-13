@@ -1,0 +1,7 @@
+Monad Autograder
+Testing mp1 at 2013-09-03 00:39:33
+
+"We don't have time to stop for gas, we're already late." ~ Mike Cleron
+
+Setting up test environment...
+Error: /dev/shm/geigle1/monad/fa13-cs225/li160/mp1/Makefile does not exist.

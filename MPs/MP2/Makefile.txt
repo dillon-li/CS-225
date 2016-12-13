@@ -1,0 +1,38 @@
+EXE = testimage
+EXE2 = testscene
+OBJS = png.o rgbapixel.o image.o testimage.o
+OBJS2 = scene.o testscene.o png.o rgbapixel.o image.o
+
+COMPILER = g++
+COMPILER_OPTS = -c -g -O0 -Wall -Werror
+LINKER = g++
+LINKER_OPTS = -lpng
+
+all : $(EXE) $(EXE2)
+
+$(EXE) : $(OBJS)
+	$(LINKER) $(OBJS) $(LINKER_OPTS) -o $(EXE)
+
+$(EXE2) : $(OBJS2)
+	$(LINKER) $(OBJS2) $(LINKER_OPTS) -o $(EXE2)
+
+png.o : png.cpp png.h rgbapixel.h
+	$(COMPILER) $(COMPILER_OPTS) png.cpp
+
+rgbapixel.o : rgbapixel.cpp rgbapixel.h
+	$(COMPILER) $(COMPILER_OPTS) rgbapixel.cpp
+
+image.o : image.cpp image.h png.h
+	$(COMPILER) $(COMPILER_OPTS) image.cpp
+
+testimage.o : image.h testimage.cpp
+	$(COMPILER) $(COMPILER_OPTS) testimage.cpp
+
+scene.o : scene.h scene.cpp
+	$(COMPILER) $(COMPILER_OPTS) scene.cpp
+
+testscene.o : scene.h testscene.cpp
+	$(COMPILER) $(COMPILER_OPTS) testscene.cpp
+
+clean :
+	-rm -f *.o $(EXE)

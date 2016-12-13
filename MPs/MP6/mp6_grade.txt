@@ -1,0 +1,43 @@
+Monad Autograder
+Testing mp6 at 2013-11-20 01:05:24
+
+"I think Microsoft named .NET so it wouldn't show up in a Unix directory listing." ~ Oktal
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+testSmallerDimVal . . . . . [3 pts]  - FAILED
+testShouldReplace . . . . . [3 pts]  - FAILED
+testLinearCtor_1_10 . . . . [4 pts]  - FAILED
+testLinearCtor_3_31 . . . . [4 pts]  - FAILED
+testLinearCtor_2_14 . . . . [4 pts]  - FAILED
+testLinearNNS_1_10  . . . . [4 pts]  - FAILED
+testLinearNNS_3_31  . . . . [4 pts]  - FAILED
+testLinearNNS_2_14  . . . . [4 pts]  - FAILED
+testDeceptiveNNOneLevelCtor [4 pts]  - FAILED
+testDeceptiveNNOneLevelNNS  [3 pts]  - FAILED
+testMinesCtor . . . . . . . [3 pts]  - FAILED
+testMinesNNS  . . . . . . . [4 pts]  - FAILED
+testDeceptiveMinesCtor  . . [3 pts]  - FAILED
+testDeceptiveMinesNNS . . . [5 pts]  - FAILED
+testTieBreakingCtor . . . . [3 pts]  - FAILED
+testTieBreakingNNS  . . . . [3 pts]  - FAILED
+testLeftRecurseCtor . . . . [3 pts]  - FAILED
+testLeftRecurseNNS  . . . . [3 pts]  - FAILED
+testRandom1Ctor . . . . . . [3 pts]  - FAILED
+testRandom1NNS  . . . . . . [3 pts]  - FAILED
+testRandom2Ctor . . . . . . [3 pts]  - FAILED
+testRandom2NNS  . . . . . . [3 pts]  - FAILED
+testCheckeredMosaic . . . . [12 pts] - FAILED
+testPrimaryColorMosaic  . . [6 pts]  - FAILED
+testRandomMosaic  . . . . . [6 pts]  - FAILED
+
+
+Total score...
+================================================================
+TOTAL SCORE: 0
+

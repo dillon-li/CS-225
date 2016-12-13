@@ -1,0 +1,220 @@
+Monad Autograder
+Testing lab_huffman at 2013-10-28 06:04:54
+
+"I think Microsoft named .NET so it wouldn't show up in a Unix directory listing." ~ Oktal
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+test_encoder_binary_4  . . . . . . [20 pts] - FAILED: unit_tests.cpp:45: Your binary file "test.bin" does not match our binary file "soln_test_4.bin"
+test_encoder_binary_8  . . . . . . [20 pts] - FAILED: unit_tests.cpp:45: Your binary file "test.bin" does not match our binary file "soln_test_8.bin"
+test_encoder_valgrind_2 (valgrind) [6 pts]  - FAILED: unit_tests.cpp:45: Your binary file "test.bin" does not match our binary file "soln_test_2.bin"
+test_encoder_writetree_4 . . . . . [2 pts]  - FAILED: unit_tests.cpp:45: Your binary file "tree.huff" does not match our binary file "soln_tree_4.huff"
+test_encoder_writetree_8 . . . . . [2 pts]  - FAILED: unit_tests.cpp:45: Your binary file "tree.huff" does not match our binary file "soln_tree_8.huff"
+test_decode_4  . . . . . . . . . . [20 pts] - FAILED: unit_tests.cpp:106: [decoded => dd
+d
+d
+d
+edededededededed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+aeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeccccccccccccccccccccc
+d
+test_decode_8  . . . . . . . . . . [20 pts] - FAILED: unit_tests.cpp:118: [decoded => dd
+d
+d
+d
+d
+d
+d
+d
+edededededededededededededededed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+aeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeccccccccccccccccccccccccccccccccccccccccccbdd] != [expected.str() => aaaaaaaabbbbbbbbbbbbbbbbccccccccccccccccccccccccccccccccddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+]
+test_decode_readtree_4 . . . . . . [2 pts]  - passed
+test_decode_readtree_8 . . . . . . [2 pts]  - passed
+test_the_works (valgrind)  . . . . [6 pts]  - FAILED: unit_tests.cpp:45: Your binary file "tree.huff" does not match our binary file "soln_tree_2.huff"
+
+
+Total score...
+================================================================
+TOTAL SCORE: 4
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+test_encoder_binary_4 [20 points]
+Result: FAILED: unit_tests.cpp:45: Your binary file "test.bin" does not match our binary file "soln_test_4.bin"
+Took 0ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_encoder_binary_8 [20 points]
+Result: FAILED: unit_tests.cpp:45: Your binary file "test.bin" does not match our binary file "soln_test_8.bin"
+Took 0ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_encoder_valgrind_2 (run under valgrind) [6 points]
+Result: FAILED: unit_tests.cpp:45: Your binary file "test.bin" does not match our binary file "soln_test_2.bin"
+Took unknown time (5000ms timeout)
+Output:
+----------------------------------------------------------------
+Running test_encoder_valgrind_2 [worth 6 points, output below]
+Result: FAILED:
+unit_tests.cpp:45: Your binary file "test.bin" does not match our binary file "soln_test_2.bin"
+
+----------------------------------------------------------------
+test_encoder_writetree_4 [2 points]
+Result: FAILED: unit_tests.cpp:45: Your binary file "tree.huff" does not match our binary file "soln_tree_4.huff"
+Took 0ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_encoder_writetree_8 [2 points]
+Result: FAILED: unit_tests.cpp:45: Your binary file "tree.huff" does not match our binary file "soln_tree_8.huff"
+Took 0ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_decode_4 [20 points]
+Result: FAILED: unit_tests.cpp:106: [decoded => dd
+d
+d
+d
+edededededededed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+aeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeccccccccccccccccccccc
+d
+Took 0ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_decode_8 [20 points]
+Result: FAILED: unit_tests.cpp:118: [decoded => dd
+d
+d
+d
+d
+d
+d
+d
+edededededededededededededededed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+aeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeccccccccccccccccccccccccccccccccccccccccccbdd] != [expected.str() => aaaaaaaabbbbbbbbbbbbbbbbccccccccccccccccccccccccccccccccddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+]
+Took 0ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_the_works (run under valgrind) [6 points]
+Result: FAILED: unit_tests.cpp:45: Your binary file "tree.huff" does not match our binary file "soln_tree_2.huff"
+Took unknown time (5000ms timeout)
+Output:
+----------------------------------------------------------------
+Running test_the_works [worth 6 points, output below]
+Result: FAILED:
+unit_tests.cpp:45: Your binary file "tree.huff" does not match our binary file "soln_tree_2.huff"
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 4
+

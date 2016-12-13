@@ -1,0 +1,719 @@
+Monad Autograder
+Testing mp2 at 2013-09-21 01:01:34
+
+"Sometimes I just like to throw things." ~ Cinda Heeren
+
+Setting up test environment...
+Compiling...
+================================================================
+../source/cc-monad g++ -c -g -O0 -Wall -Werror testimage.cpp
+../source/cc-monad g++ png.o rgbapixel.o image.o testimage.o -lpng -o testimage
+
+
+Running tests...
+================================================================
+InvertColorsEven . . . . . . . . . . . [8 pts] - passed
+FlipLeftEven . . . . . . . . . . . . . [5 pts] - passed
+FlipLeftOdd  . . . . . . . . . . . . . [5 pts] - passed
+AdjustBrightnessEven . . . . . . . . . [6 pts] - passed
+AdjustBrightnessEven2  . . . . . . . . [3 pts] - passed
+AdjustBrightnessEven3  . . . . . . . . [3 pts] - passed
+Valgrind1 (valgrind) . . . . . . . . . [5 pts] - passed
+AddPictureValidIndex . . . . . . . . . [3 pts] - passed
+AddPictureInvalidIndex . . . . . . . . [2 pts] - FAILED: Aborted
+ImageAssignmentOperator  . . . . . . . [2 pts] - passed
+SceneGetPictureInvalidIndex  . . . . . [2 pts] - FAILED: testscene.cpp:120: Assertion (NULL == image) failed
+SceneChangeMaxLayersLarger . . . . . . [3 pts] - FAILED: Segmentation fault
+SceneChangeMaxLayersSmaller (valgrind) [1 pts] - FAILED: Directly lost memory leaks
+SceneChangeMaxLayersInvalidChange  . . [2 pts] - passed
+SceneCopyCtor  . . . . . . . . . . . . [3 pts] - FAILED: Aborted
+SceneCopyCtor2 . . . . . . . . . . . . [2 pts] - FAILED: Aborted
+SceneAssignmentOperator  . . . . . . . [3 pts] - FAILED: Aborted
+SceneAssignmentOperator2 . . . . . . . [2 pts] - FAILED: Segmentation fault
+SceneChangeLayer . . . . . . . . . . . [3 pts] - passed
+SceneChangeLayerInvalid  . . . . . . . [2 pts] - FAILED: Segmentation fault
+SceneDrawScene . . . . . . . . . . . . [3 pts] - FAILED: testscene.cpp:267: Assertion (*soln == firstScene->drawscene()) failed
+SceneDrawScene2  . . . . . . . . . . . [3 pts] - FAILED: testscene.cpp:282: Assertion (*soln == firstScene->drawscene()) failed
+SceneDrawScene3  . . . . . . . . . . . [3 pts] - FAILED: testscene.cpp:298: Assertion (*soln == firstScene->drawscene()) failed
+SceneDrawScene4  . . . . . . . . . . . [3 pts] - FAILED: testscene.cpp:313: Assertion (*soln == firstScene->drawscene()) failed
+SceneDrawSceneChangeLayer  . . . . . . [2 pts] - FAILED: testscene.cpp:327: Assertion (*soln == firstScene->drawscene()) failed
+SceneDrawSceneDeletePicture  . . . . . [2 pts] - FAILED: testscene.cpp:341: Assertion (*soln == firstScene->drawscene()) failed
+SceneDrawSceneTranslate  . . . . . . . [2 pts] - FAILED: testscene.cpp:354: Assertion (*soln == firstScene->drawscene()) failed
+SceneDrawSceneTranslate2 . . . . . . . [2 pts] - FAILED: testscene.cpp:368: Assertion (*soln == firstScene->drawscene()) failed
+SceneTranslateInvalid  . . . . . . . . [2 pts] - FAILED: Aborted
+SceneTranslateInvalid2 . . . . . . . . [1 pts] - passed
+SceneDeletePictureInvalid  . . . . . . [2 pts] - FAILED: Segmentation fault
+Valgrind2 (valgrind) . . . . . . . . . [5 pts] - FAILED: ==30392==    by 0x420795: ??? (in /dev/shm/geigle1/monad/mp2_grade/testscene)
+==30392==    b
+Valgrind3 (valgrind) . . . . . . . . . [5 pts] - FAILED: ==30400==    by 0x407C26: proxy::RunTests::execute_by_mode() (testimage.cpp:544)
+==30400==    by 0x407BD7: proxy::RunTests::execute() (testi
+
+
+Total score...
+================================================================
+TOTAL SCORE: 46
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+AddPictureInvalidIndex [2 points]
+Result: FAILED: Aborted
+Took 35910048ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+index out of bounds
+*** glibc detected *** ./proxy: free(): invalid next size (fast): 0x000000000223f910 ***
+======= Backtrace: =========
+/lib64/libc.so.6[0x3a7c475916]
+/lib64/libc.so.6[0x3a7c478443]
+./proxy[0x41e2b3]
+./proxy[0x41ea80]
+./proxy[0x404dee]
+./proxy[0x413bf7]
+./proxy[0x405208]
+./proxy[0x40f486]
+./proxy[0x4135d8]
+./proxy[0x4091ae]
+./proxy[0x408bcd]
+./proxy[0x415601]
+./proxy[0x409032]
+./proxy[0x4082a4]
+./proxy[0x407c47]
+./proxy[0x407bd8]
+./proxy[0x407374]
+/lib64/libc.so.6(__libc_start_main+0xfd)[0x3a7c41ecdd]
+./proxy[0x4040d9]
+======= Memory map: ========
+00400000-0042c000 r-xp 00000000 00:10 5350003                            /dev/shm/geigle1/monad/mp2_grade/testscene
+0062c000-0062d000 rw-p 0002c000 00:10 5350003                            /dev/shm/geigle1/monad/mp2_grade/testscene
+0223f000-02260000 rw-p 00000000 00:00 0                                  [heap]
+3a7c000000-3a7c020000 r-xp 00000000 fd:00 393315                         /lib64/ld-2.12.so
+3a7c21f000-3a7c220000 r--p 0001f000 fd:00 393315                         /lib64/ld-2.12.so
+3a7c220000-3a7c221000 rw-p 00020000 fd:00 393315                         /lib64/ld-2.12.so
+3a7c221000-3a7c222000 rw-p 00000000 00:00 0 
+3a7c400000-3a7c589000 r-xp 00000000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c589000-3a7c789000 ---p 00189000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c789000-3a7c78d000 r--p 00189000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c78d000-3a7c78e000 rw-p 0018d000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c78e000-3a7c793000 rw-p 00000000 00:00 0 
+3a7c800000-3a7c883000 r-xp 00000000 fd:00 393531                         /lib64/libm-2.12.so
+3a7c883000-3a7ca82000 ---p 00083000 fd:00 393531                         /lib64/libm-2.12.so
+3a7ca82000-3a7ca83000 r--p 00082000 fd:00 393531                         /lib64/libm-2.12.so
+3a7ca83000-3a7ca84000 rw-p 00083000 fd:00 393531                         /lib64/libm-2.12.so
+3a7d400000-3a7d415000 r-xp 00000000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a7d415000-3a7d614000 ---p 00015000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a7d614000-3a7d615000 r--p 00014000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a7d615000-3a7d616000 rw-p 00015000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a81000000-3a81016000 r-xp 00000000 fd:00 394354                         /lib64/libgcc_s-4.4.6-20120305.so.1
+3a81016000-3a81215000 ---p 00016000 fd:00 394354                         /lib64/libgcc_s-4.4.6-20120305.so.1
+3a81215000-3a81216000 rw-p 00015000 fd:00 394354                         /lib64/libgcc_s-4.4.6-20120305.so.1
+3a81400000-3a81425000 r-xp 00000000 fd:00 801778                         /usr/lib64/libpng12.so.0.49.0
+3a81425000-3a81625000 ---p 00025000 fd:00 801778                         /usr/lib64/libpng12.so.0.49.0
+3a81625000-3a81626000 rw-p 00025000 fd:00 801778                         /usr/lib64/libpng12.so.0.49.0
+3a82c00000-3a82ce8000 r-xp 00000000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82ce8000-3a82ee8000 ---p 000e8000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82ee8000-3a82eef000 r--p 000e8000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82eef000-3a82ef1000 rw-p 000ef000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82ef1000-3a82f06000 rw-p 00000000 00:00 0 
+7fcdde062000-7fcdde068000 rw-p 00000000 00:00 0 
+7fcdde089000-7fcdde08a000 rw-p 00000000 00:00 0 
+7fcdde08a000-7fcdde08c000 rw-p 00000000 00:00 0 
+7ffff8ab7000-7ffff8acc000 rw-p 00000000 00:00 0                          [stack]
+7ffff8bff000-7ffff8c00000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+----------------------------------------------------------------
+SceneGetPictureInvalidIndex [2 points]
+Result: FAILED: testscene.cpp:120: Assertion (NULL == image) failed
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneChangeMaxLayersLarger [3 points]
+Result: FAILED: Segmentation fault
+Took 130433861812235ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneChangeMaxLayersSmaller (run under valgrind) [1 points]
+Result: FAILED: Directly lost memory leaks
+Took unknown time (2000ms timeout)
+Output:
+----------------------------------------------------------------
+Running SceneChangeMaxLayersSmaller [worth 1 points, output below]
+==30372== 424 (24 direct, 400 indirect) bytes in 1 blocks are definitely lost in loss record 2 of 2
+==30372==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==30372==    by 0x4043CA: Scene::addpicture(char const*, int, int, int) (scene.cpp:70)
+==30372==    by 0x40FB98: proxy_test::SceneChangeMaxLayersSmaller(util::sizedpipestream<512ul>&) (testscene.cpp:151)
+==30372==    by 0x4135D7: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==30372==    by 0x4091AD: proxy::test_execution::child_test() (testimage.cpp:870)
+==30372==    by 0x408BCC: proxy::test_execution::child() (testimage.cpp:755)
+==30372==    by 0x415600: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (testimage.cpp:829)
+==30372==    by 0x409031: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (testimage.cpp:810)
+==30372==    by 0x407EB6: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (testimage.cpp:571)
+==30372==    by 0x407DBE: proxy::RunTests::run_single_test(char const*) (testimage.cpp:559)
+==30372==    by 0x407C26: proxy::RunTests::execute_by_mode() (testimage.cpp:544)
+==30372==    by 0x407BD7: proxy::RunTests::execute() (testimage.cpp:535)
+==30372== 
+index out of bounds
+Result: FAILED:
+Directly lost memory leaks
+
+----------------------------------------------------------------
+SceneCopyCtor [3 points]
+Result: FAILED: Aborted
+Took 130455336648710ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+*** glibc detected *** ./proxy: free(): invalid pointer: 0x0000003a7c78ef08 ***
+======= Backtrace: =========
+/lib64/libc.so.6[0x3a7c475916]
+./proxy[0x41e2b3]
+./proxy[0x41eaa8]
+./proxy[0x404e39]
+./proxy[0x404c13]
+./proxy[0x4042ab]
+./proxy[0x40fe22]
+./proxy[0x4135d8]
+./proxy[0x4091ae]
+./proxy[0x408bcd]
+./proxy[0x415601]
+./proxy[0x409032]
+./proxy[0x4082a4]
+./proxy[0x407c47]
+./proxy[0x407bd8]
+./proxy[0x407374]
+/lib64/libc.so.6(__libc_start_main+0xfd)[0x3a7c41ecdd]
+./proxy[0x4040d9]
+======= Memory map: ========
+00400000-0042c000 r-xp 00000000 00:10 5350003                            /dev/shm/geigle1/monad/mp2_grade/testscene
+0062c000-0062d000 rw-p 0002c000 00:10 5350003                            /dev/shm/geigle1/monad/mp2_grade/testscene
+0223f000-02260000 rw-p 00000000 00:00 0                                  [heap]
+3a7c000000-3a7c020000 r-xp 00000000 fd:00 393315                         /lib64/ld-2.12.so
+3a7c21f000-3a7c220000 r--p 0001f000 fd:00 393315                         /lib64/ld-2.12.so
+3a7c220000-3a7c221000 rw-p 00020000 fd:00 393315                         /lib64/ld-2.12.so
+3a7c221000-3a7c222000 rw-p 00000000 00:00 0 
+3a7c400000-3a7c589000 r-xp 00000000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c589000-3a7c789000 ---p 00189000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c789000-3a7c78d000 r--p 00189000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c78d000-3a7c78e000 rw-p 0018d000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c78e000-3a7c793000 rw-p 00000000 00:00 0 
+3a7c800000-3a7c883000 r-xp 00000000 fd:00 393531                         /lib64/libm-2.12.so
+3a7c883000-3a7ca82000 ---p 00083000 fd:00 393531                         /lib64/libm-2.12.so
+3a7ca82000-3a7ca83000 r--p 00082000 fd:00 393531                         /lib64/libm-2.12.so
+3a7ca83000-3a7ca84000 rw-p 00083000 fd:00 393531                         /lib64/libm-2.12.so
+3a7d400000-3a7d415000 r-xp 00000000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a7d415000-3a7d614000 ---p 00015000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a7d614000-3a7d615000 r--p 00014000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a7d615000-3a7d616000 rw-p 00015000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a81000000-3a81016000 r-xp 00000000 fd:00 394354                         /lib64/libgcc_s-4.4.6-20120305.so.1
+3a81016000-3a81215000 ---p 00016000 fd:00 394354                         /lib64/libgcc_s-4.4.6-20120305.so.1
+3a81215000-3a81216000 rw-p 00015000 fd:00 394354                         /lib64/libgcc_s-4.4.6-20120305.so.1
+3a81400000-3a81425000 r-xp 00000000 fd:00 801778                         /usr/lib64/libpng12.so.0.49.0
+3a81425000-3a81625000 ---p 00025000 fd:00 801778                         /usr/lib64/libpng12.so.0.49.0
+3a81625000-3a81626000 rw-p 00025000 fd:00 801778                         /usr/lib64/libpng12.so.0.49.0
+3a82c00000-3a82ce8000 r-xp 00000000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82ce8000-3a82ee8000 ---p 000e8000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82ee8000-3a82eef000 r--p 000e8000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82eef000-3a82ef1000 rw-p 000ef000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82ef1000-3a82f06000 rw-p 00000000 00:00 0 
+7fcdde062000-7fcdde068000 rw-p 00000000 00:00 0 
+7fcdde089000-7fcdde08a000 rw-p 00000000 00:00 0 
+7fcdde08a000-7fcdde08c000 rw-p 00000000 00:00 0 
+7ffff8ab7000-7ffff8acc000 rw-p 00000000 00:00 0                          [stack]
+7ffff8bff000-7ffff8c00000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+----------------------------------------------------------------
+SceneCopyCtor2 [2 points]
+Result: FAILED: Aborted
+Took 130459631616006ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+*** glibc detected *** ./proxy: free(): invalid pointer: 0x0000003a7c78eee8 ***
+======= Backtrace: =========
+/lib64/libc.so.6[0x3a7c475916]
+./proxy[0x41e2b3]
+./proxy[0x41eaa8]
+./proxy[0x404e39]
+./proxy[0x404c13]
+./proxy[0x4042ab]
+./proxy[0x410033]
+./proxy[0x4135d8]
+./proxy[0x4091ae]
+./proxy[0x408bcd]
+./proxy[0x415601]
+./proxy[0x409032]
+./proxy[0x4082a4]
+./proxy[0x407c47]
+./proxy[0x407bd8]
+./proxy[0x407374]
+/lib64/libc.so.6(__libc_start_main+0xfd)[0x3a7c41ecdd]
+./proxy[0x4040d9]
+======= Memory map: ========
+00400000-0042c000 r-xp 00000000 00:10 5350003                            /dev/shm/geigle1/monad/mp2_grade/testscene
+0062c000-0062d000 rw-p 0002c000 00:10 5350003                            /dev/shm/geigle1/monad/mp2_grade/testscene
+0223f000-02260000 rw-p 00000000 00:00 0                                  [heap]
+3a7c000000-3a7c020000 r-xp 00000000 fd:00 393315                         /lib64/ld-2.12.so
+3a7c21f000-3a7c220000 r--p 0001f000 fd:00 393315                         /lib64/ld-2.12.so
+3a7c220000-3a7c221000 rw-p 00020000 fd:00 393315                         /lib64/ld-2.12.so
+3a7c221000-3a7c222000 rw-p 00000000 00:00 0 
+3a7c400000-3a7c589000 r-xp 00000000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c589000-3a7c789000 ---p 00189000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c789000-3a7c78d000 r--p 00189000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c78d000-3a7c78e000 rw-p 0018d000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c78e000-3a7c793000 rw-p 00000000 00:00 0 
+3a7c800000-3a7c883000 r-xp 00000000 fd:00 393531                         /lib64/libm-2.12.so
+3a7c883000-3a7ca82000 ---p 00083000 fd:00 393531                         /lib64/libm-2.12.so
+3a7ca82000-3a7ca83000 r--p 00082000 fd:00 393531                         /lib64/libm-2.12.so
+3a7ca83000-3a7ca84000 rw-p 00083000 fd:00 393531                         /lib64/libm-2.12.so
+3a7d400000-3a7d415000 r-xp 00000000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a7d415000-3a7d614000 ---p 00015000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a7d614000-3a7d615000 r--p 00014000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a7d615000-3a7d616000 rw-p 00015000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a81000000-3a81016000 r-xp 00000000 fd:00 394354                         /lib64/libgcc_s-4.4.6-20120305.so.1
+3a81016000-3a81215000 ---p 00016000 fd:00 394354                         /lib64/libgcc_s-4.4.6-20120305.so.1
+3a81215000-3a81216000 rw-p 00015000 fd:00 394354                         /lib64/libgcc_s-4.4.6-20120305.so.1
+3a81400000-3a81425000 r-xp 00000000 fd:00 801778                         /usr/lib64/libpng12.so.0.49.0
+3a81425000-3a81625000 ---p 00025000 fd:00 801778                         /usr/lib64/libpng12.so.0.49.0
+3a81625000-3a81626000 rw-p 00025000 fd:00 801778                         /usr/lib64/libpng12.so.0.49.0
+3a82c00000-3a82ce8000 r-xp 00000000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82ce8000-3a82ee8000 ---p 000e8000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82ee8000-3a82eef000 r--p 000e8000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82eef000-3a82ef1000 rw-p 000ef000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82ef1000-3a82f06000 rw-p 00000000 00:00 0 
+7fcdde062000-7fcdde068000 rw-p 00000000 00:00 0 
+7fcdde089000-7fcdde08a000 rw-p 00000000 00:00 0 
+7fcdde08a000-7fcdde08c000 rw-p 00000000 00:00 0 
+7ffff8ab7000-7ffff8acc000 rw-p 00000000 00:00 0                          [stack]
+7ffff8bff000-7ffff8c00000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+----------------------------------------------------------------
+SceneAssignmentOperator [3 points]
+Result: FAILED: Aborted
+Took 130463926583302ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+*** glibc detected *** ./proxy: double free or corruption (out): 0x000000000223f850 ***
+======= Backtrace: =========
+/lib64/libc.so.6[0x3a7c475916]
+/lib64/libc.so.6[0x3a7c478443]
+./proxy[0x41e2b3]
+./proxy[0x41eaa8]
+./proxy[0x404e39]
+./proxy[0x404c13]
+./proxy[0x404301]
+./proxy[0x4102a2]
+./proxy[0x4135d8]
+./proxy[0x4091ae]
+./proxy[0x408bcd]
+./proxy[0x415601]
+./proxy[0x409032]
+./proxy[0x4082a4]
+./proxy[0x407c47]
+./proxy[0x407bd8]
+./proxy[0x407374]
+/lib64/libc.so.6(__libc_start_main+0xfd)[0x3a7c41ecdd]
+./proxy[0x4040d9]
+======= Memory map: ========
+00400000-0042c000 r-xp 00000000 00:10 5350003                            /dev/shm/geigle1/monad/mp2_grade/testscene
+0062c000-0062d000 rw-p 0002c000 00:10 5350003                            /dev/shm/geigle1/monad/mp2_grade/testscene
+0223f000-02260000 rw-p 00000000 00:00 0                                  [heap]
+3a7c000000-3a7c020000 r-xp 00000000 fd:00 393315                         /lib64/ld-2.12.so
+3a7c21f000-3a7c220000 r--p 0001f000 fd:00 393315                         /lib64/ld-2.12.so
+3a7c220000-3a7c221000 rw-p 00020000 fd:00 393315                         /lib64/ld-2.12.so
+3a7c221000-3a7c222000 rw-p 00000000 00:00 0 
+3a7c400000-3a7c589000 r-xp 00000000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c589000-3a7c789000 ---p 00189000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c789000-3a7c78d000 r--p 00189000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c78d000-3a7c78e000 rw-p 0018d000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c78e000-3a7c793000 rw-p 00000000 00:00 0 
+3a7c800000-3a7c883000 r-xp 00000000 fd:00 393531                         /lib64/libm-2.12.so
+3a7c883000-3a7ca82000 ---p 00083000 fd:00 393531                         /lib64/libm-2.12.so
+3a7ca82000-3a7ca83000 r--p 00082000 fd:00 393531                         /lib64/libm-2.12.so
+3a7ca83000-3a7ca84000 rw-p 00083000 fd:00 393531                         /lib64/libm-2.12.so
+3a7d400000-3a7d415000 r-xp 00000000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a7d415000-3a7d614000 ---p 00015000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a7d614000-3a7d615000 r--p 00014000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a7d615000-3a7d616000 rw-p 00015000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a81000000-3a81016000 r-xp 00000000 fd:00 394354                         /lib64/libgcc_s-4.4.6-20120305.so.1
+3a81016000-3a81215000 ---p 00016000 fd:00 394354                         /lib64/libgcc_s-4.4.6-20120305.so.1
+3a81215000-3a81216000 rw-p 00015000 fd:00 394354                         /lib64/libgcc_s-4.4.6-20120305.so.1
+3a81400000-3a81425000 r-xp 00000000 fd:00 801778                         /usr/lib64/libpng12.so.0.49.0
+3a81425000-3a81625000 ---p 00025000 fd:00 801778                         /usr/lib64/libpng12.so.0.49.0
+3a81625000-3a81626000 rw-p 00025000 fd:00 801778                         /usr/lib64/libpng12.so.0.49.0
+3a82c00000-3a82ce8000 r-xp 00000000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82ce8000-3a82ee8000 ---p 000e8000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82ee8000-3a82eef000 r--p 000e8000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82eef000-3a82ef1000 rw-p 000ef000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82ef1000-3a82f06000 rw-p 00000000 00:00 0 
+7fcdde062000-7fcdde068000 rw-p 00000000 00:00 0 
+7fcdde089000-7fcdde08a000 rw-p 00000000 00:00 0 
+7fcdde08a000-7fcdde08c000 rw-p 00000000 00:00 0 
+7ffff8ab7000-7ffff8acc000 rw-p 00000000 00:00 0                          [stack]
+7ffff8bff000-7ffff8c00000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+----------------------------------------------------------------
+SceneAssignmentOperator2 [2 points]
+Result: FAILED: Segmentation fault
+Took 130468221550603ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneChangeLayerInvalid [2 points]
+Result: FAILED: Segmentation fault
+Took 130476811485195ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+invalid index
+
+----------------------------------------------------------------
+SceneDrawScene [3 points]
+Result: FAILED: testscene.cpp:267: Assertion (*soln == firstScene->drawscene()) failed
+Took 2ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneDrawScene2 [3 points]
+Result: FAILED: testscene.cpp:282: Assertion (*soln == firstScene->drawscene()) failed
+Took 2ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneDrawScene3 [3 points]
+Result: FAILED: testscene.cpp:298: Assertion (*soln == firstScene->drawscene()) failed
+Took 2ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+index out of bounds
+
+----------------------------------------------------------------
+SceneDrawScene4 [3 points]
+Result: FAILED: testscene.cpp:313: Assertion (*soln == firstScene->drawscene()) failed
+Took 2ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+index out of bounds
+
+----------------------------------------------------------------
+SceneDrawSceneChangeLayer [2 points]
+Result: FAILED: testscene.cpp:327: Assertion (*soln == firstScene->drawscene()) failed
+Took 1ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneDrawSceneDeletePicture [2 points]
+Result: FAILED: testscene.cpp:341: Assertion (*soln == firstScene->drawscene()) failed
+Took 1ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneDrawSceneTranslate [2 points]
+Result: FAILED: testscene.cpp:354: Assertion (*soln == firstScene->drawscene()) failed
+Took 2ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneDrawSceneTranslate2 [2 points]
+Result: FAILED: testscene.cpp:368: Assertion (*soln == firstScene->drawscene()) failed
+Took 2ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneTranslateInvalid [2 points]
+Result: FAILED: Aborted
+Took 130515466190854ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+invalid index
+invalid index
+*** glibc detected *** ./proxy: double free or corruption (out): 0x000000000223f620 ***
+======= Backtrace: =========
+/lib64/libc.so.6[0x3a7c475916]
+/lib64/libc.so.6[0x3a7c478443]
+./proxy[0x404d42]
+./proxy[0x4042c6]
+./proxy[0x4121be]
+./proxy[0x4135d8]
+./proxy[0x4091ae]
+./proxy[0x408bcd]
+./proxy[0x415601]
+./proxy[0x409032]
+./proxy[0x4082a4]
+./proxy[0x407c47]
+./proxy[0x407bd8]
+./proxy[0x407374]
+/lib64/libc.so.6(__libc_start_main+0xfd)[0x3a7c41ecdd]
+./proxy[0x4040d9]
+======= Memory map: ========
+00400000-0042c000 r-xp 00000000 00:10 5350003                            /dev/shm/geigle1/monad/mp2_grade/testscene
+0062c000-0062d000 rw-p 0002c000 00:10 5350003                            /dev/shm/geigle1/monad/mp2_grade/testscene
+0223f000-02260000 rw-p 00000000 00:00 0 
+02260000-02267000 rw-p 00000000 00:00 0 
+3a7c000000-3a7c020000 r-xp 00000000 fd:00 393315                         /lib64/ld-2.12.so
+3a7c21f000-3a7c220000 r--p 0001f000 fd:00 393315                         /lib64/ld-2.12.so
+3a7c220000-3a7c221000 rw-p 00020000 fd:00 393315                         /lib64/ld-2.12.so
+3a7c221000-3a7c222000 rw-p 00000000 00:00 0 
+3a7c400000-3a7c589000 r-xp 00000000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c589000-3a7c789000 ---p 00189000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c789000-3a7c78d000 r--p 00189000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c78d000-3a7c78e000 rw-p 0018d000 fd:00 393344                         /lib64/libc-2.12.so
+3a7c78e000-3a7c793000 rw-p 00000000 00:00 0 
+3a7c800000-3a7c883000 r-xp 00000000 fd:00 393531                         /lib64/libm-2.12.so
+3a7c883000-3a7ca82000 ---p 00083000 fd:00 393531                         /lib64/libm-2.12.so
+3a7ca82000-3a7ca83000 r--p 00082000 fd:00 393531                         /lib64/libm-2.12.so
+3a7ca83000-3a7ca84000 rw-p 00083000 fd:00 393531                         /lib64/libm-2.12.so
+3a7d400000-3a7d415000 r-xp 00000000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a7d415000-3a7d614000 ---p 00015000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a7d614000-3a7d615000 r--p 00014000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a7d615000-3a7d616000 rw-p 00015000 fd:00 394346                         /lib64/libz.so.1.2.3
+3a81000000-3a81016000 r-xp 00000000 fd:00 394354                         /lib64/libgcc_s-4.4.6-20120305.so.1
+3a81016000-3a81215000 ---p 00016000 fd:00 394354                         /lib64/libgcc_s-4.4.6-20120305.so.1
+3a81215000-3a81216000 rw-p 00015000 fd:00 394354                         /lib64/libgcc_s-4.4.6-20120305.so.1
+3a81400000-3a81425000 r-xp 00000000 fd:00 801778                         /usr/lib64/libpng12.so.0.49.0
+3a81425000-3a81625000 ---p 00025000 fd:00 801778                         /usr/lib64/libpng12.so.0.49.0
+3a81625000-3a81626000 rw-p 00025000 fd:00 801778                         /usr/lib64/libpng12.so.0.49.0
+3a82c00000-3a82ce8000 r-xp 00000000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82ce8000-3a82ee8000 ---p 000e8000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82ee8000-3a82eef000 r--p 000e8000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82eef000-3a82ef1000 rw-p 000ef000 fd:00 821685                         /usr/lib64/libstdc++.so.6.0.13
+3a82ef1000-3a82f06000 rw-p 00000000 00:00 0 
+7fcdde062000-7fcdde068000 rw-p 00000000 00:00 0 
+7fcdde089000-7fcdde08a000 rw-p 00000000 00:00 0 
+7fcdde08a000-7fcdde08c000 rw-p 00000000 00:00 0 
+7ffff8ab7000-7ffff8acc000 rw-p 00000000 00:00 0                          [stack]
+7ffff8bff000-7ffff8c00000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+----------------------------------------------------------------
+SceneDeletePictureInvalid [2 points]
+Result: FAILED: Segmentation fault
+Took 130524056125451ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+Valgrind2 (run under valgrind) [5 points]
+Result: FAILED: ==30392==    by 0x420795: ??? (in /dev/shm/geigle1/monad/mp2_grade/testscene)
+==30392==    b
+Took unknown time (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Running Valgrind2 [worth 5 points, output below]
+==30393== Conditional jump or move depends on uninitialised value(s)
+==30393==    at 0x41EA9A: PNG::operator=(PNG const&) (png.cpp:149)
+==30393==    by 0x404E38: Image::operator=(Image const&) (image.h:8)
+==30393==    by 0x404C12: Scene::copy(Scene const&) (scene.cpp:178)
+==30393==    by 0x4042AA: Scene::Scene(Scene const&) (scene.cpp:28)
+==30393==    by 0x41244D: proxy_test::Valgrind2(util::sizedpipestream<512ul>&) (testscene.cpp:419)
+==30393==    by 0x4135D7: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==30393==    by 0x4091AD: proxy::test_execution::child_test() (testimage.cpp:870)
+==30393==    by 0x408BCC: proxy::test_execution::child() (testimage.cpp:755)
+==30393==    by 0x415600: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (testimage.cpp:829)
+==30393==    by 0x409031: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (testimage.cpp:810)
+==30393==    by 0x407EB6: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (testimage.cpp:571)
+==30393==    by 0x407DBE: proxy::RunTests::run_single_test(char const*) (testimage.cpp:559)
+==30393== 
+==30393== Use of uninitialised value of size 8
+==30393==    at 0x41E29A: PNG::_clear() (png.cpp:25)
+==30393==    by 0x41EAA7: PNG::operator=(PNG const&) (png.cpp:151)
+==30393==    by 0x404E38: Image::operator=(Image const&) (image.h:8)
+==30393==    by 0x404C12: Scene::copy(Scene const&) (scene.cpp:178)
+==30393==    by 0x4042AA: Scene::Scene(Scene const&) (scene.cpp:28)
+==30393==    by 0x41244D: proxy_test::Valgrind2(util::sizedpipestream<512ul>&) (testscene.cpp:419)
+==30393==    by 0x4135D7: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==30393==    by 0x4091AD: proxy::test_execution::child_test() (testimage.cpp:870)
+==30393==    by 0x408BCC: proxy::test_execution::child() (testimage.cpp:755)
+==30393==    by 0x415600: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (testimage.cpp:829)
+==30393==    by 0x409031: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (testimage.cpp:810)
+==30393==    by 0x407EB6: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (testimage.cpp:571)
+==30393== 
+==30393== Invalid read of size 8
+==30393==    at 0x41E29A: PNG::_clear() (png.cpp:25)
+==30393==    by 0x41EAA7: PNG::operator=(PNG const&) (png.cpp:151)
+==30393==    by 0x404E38: Image::operator=(Image const&) (image.h:8)
+==30393==    by 0x404C12: Scene::copy(Scene const&) (scene.cpp:178)
+==30393==    by 0x4042AA: Scene::Scene(Scene const&) (scene.cpp:28)
+==30393==    by 0x41244D: proxy_test::Valgrind2(util::sizedpipestream<512ul>&) (testscene.cpp:419)
+==30393==    by 0x4135D7: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==30393==    by 0x4091AD: proxy::test_execution::child_test() (testimage.cpp:870)
+==30393==    by 0x408BCC: proxy::test_execution::child() (testimage.cpp:755)
+==30393==    by 0x415600: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (testimage.cpp:829)
+==30393==    by 0x409031: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (testimage.cpp:810)
+==30393==    by 0x407EB6: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (testimage.cpp:571)
+==30393==  Address 0x10 is not stack'd, malloc'd or (recently) free'd
+==30393== 
+==30393== 
+==30393== Process terminating with default action of signal 11 (SIGSEGV)
+==30393==  Access not within mapped region at address 0x10
+==30393==    at 0x41E29A: PNG::_clear() (png.cpp:25)
+==30393==    by 0x41EAA7: PNG::operator=(PNG const&) (png.cpp:151)
+==30393==    by 0x404E38: Image::operator=(Image const&) (image.h:8)
+==30393==    by 0x404C12: Scene::copy(Scene const&) (scene.cpp:178)
+==30393==    by 0x4042AA: Scene::Scene(Scene const&) (scene.cpp:28)
+==30393==    by 0x41244D: proxy_test::Valgrind2(util::sizedpipestream<512ul>&) (testscene.cpp:419)
+==30393==    by 0x4135D7: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==30393==    by 0x4091AD: proxy::test_execution::child_test() (testimage.cpp:870)
+==30393==    by 0x408BCC: proxy::test_execution::child() (testimage.cpp:755)
+==30393==    by 0x415600: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (testimage.cpp:829)
+==30393==    by 0x409031: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (testimage.cpp:810)
+==30393==    by 0x407EB6: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (testimage.cpp:571)
+==30393==  If you believe this happened as a result of a stack
+==30393==  overflow in your program's main thread (unlikely but
+==30393==  possible), you can try to increase the size of the
+==30393==  main thread stack using the --main-stacksize= flag.
+==30393==  The main thread stack size used in this run was 10485760.
+==30392== 31 bytes in 1 blocks are possibly lost in loss record 2 of 10
+==30392==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==30392==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==30392==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==30392==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==30392==    by 0x407907: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (testimage.cpp:486)
+==30392==    by 0x412B58: __static_initialization_and_destruction_0(int, int) (testimage.cpp:352)
+==30392==    by 0x41304E: global constructors keyed to testingImages (testscene.cpp:457)
+==30392==    by 0x420795: ??? (in /dev/shm/geigle1/monad/mp2_grade/testscene)
+==30392==    by 0x40362A: ??? (in /dev/shm/geigle1/monad/mp2_grade/testscene)
+==30392== 
+==30392== 33 bytes in 1 blocks are possibly lost in loss record 3 of 10
+==30392==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==30392==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==30392==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==30392==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==30392==    by 0x407907: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (testimage.cpp:486)
+==30392==    by 0x412B6C: __static_initialization_and_destruction_0(int, int) (testimage.cpp:358)
+==30392==    by 0x41304E: global constructors keyed to testingImages (testscene.cpp:457)
+==30392==    by 0x420795: ??? (in /dev/shm/geigle1/monad/mp2_grade/testscene)
+==30392==    by 0x40362A: ??? (in /dev/shm/geigle1/monad/mp2_grade/testscene)
+==30392== 
+==30392== 37 bytes in 1 blocks are possibly lost in loss record 4 of 10
+==30392==    at 0x4A06C8E: operator new(unsigned long) (vg_replace_malloc.c:261)
+==30392==    by 0x3A82C9C3A8: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==30392==    by 0x3A82C9CDC4: ??? (in /usr/lib64/libstdc++.so.6.0.13)
+==30392==    by 0x3A82C9CF12: std::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib64/libstdc++.so.6.0.13)
+==30392==    by 0x407907: proxy::add_output_check::add_output_check(char const*, bool (*)(std::string const&, std::string const&)) (testimage.cpp:486)
+==30392==    by 0x412B80: __static_initialization_and_destruction_0(int, int) (testimage.cpp:364)
+==30392==    by 0x41304E: global constructors keyed to testingImages (testscene.cpp:457)
+==30392==    by 0x420795: ??? (in /dev/shm/geigle1/monad/mp2_grade/testscene)
+==30392==    by
+
+----------------------------------------------------------------
+Valgrind3 (run under valgrind) [5 points]
+Result: FAILED: ==30400==    by 0x407C26: proxy::RunTests::execute_by_mode() (testimage.cpp:544)
+==30400==    by 0x407BD7: proxy::RunTests::execute() (testi
+Took unknown time (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Running Valgrind3 [worth 5 points, output below]
+==30400== Invalid write of size 8
+==30400==    at 0x4044E2: Scene::addpicture(char const*, int, int, int) (scene.cpp:76)
+==30400==    by 0x41284C: proxy_test::Valgrind3(util::sizedpipestream<512ul>&) (testscene.cpp:450)
+==30400==    by 0x4135D7: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==30400==    by 0x4091AD: proxy::test_execution::child_test() (testimage.cpp:870)
+==30400==    by 0x408BCC: proxy::test_execution::child() (testimage.cpp:755)
+==30400==    by 0x415600: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (testimage.cpp:829)
+==30400==    by 0x409031: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (testimage.cpp:810)
+==30400==    by 0x407EB6: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (testimage.cpp:571)
+==30400==    by 0x407DBE: proxy::RunTests::run_single_test(char const*) (testimage.cpp:559)
+==30400==    by 0x407C26: proxy::RunTests::execute_by_mode() (testimage.cpp:544)
+==30400==    by 0x407BD7: proxy::RunTests::execute() (testimage.cpp:535)
+==30400==    by 0x407373: main (testimage.cpp:425)
+==30400==  Address 0x4c83808 is 8 bytes after a block of size 16 alloc'd
+==30400==    at 0x4A0674C: operator new[](unsigned long) (vg_replace_malloc.c:305)
+==30400==    by 0x4041BC: Scene::Scene(int) (scene.cpp:13)
+==30400==    by 0x412770: proxy_test::Valgrind3(util::sizedpipestream<512ul>&) (testscene.cpp:443)
+==30400==    by 0x4135D7: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==30400==    by 0x4091AD: proxy::test_execution::child_test() (testimage.cpp:870)
+==30400==    by 0x408BCC: proxy::test_execution::child() (testimage.cpp:755)
+==30400==    by 0x415600: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (testimage.cpp:829)
+==30400==    by 0x409031: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (testimage.cpp:810)
+==30400==    by 0x407EB6: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (testimage.cpp:571)
+==30400==    by 0x407DBE: proxy::RunTests::run_single_test(char const*) (testimage.cpp:559)
+==30400==    by 0x407C26: proxy::RunTests::execute_by_mode() (testimage.cpp:544)
+==30400==    by 0x407BD7: proxy::RunTests::execute() (testimage.cpp:535)
+==30400== 
+==30400== Invalid write of size 4
+==30400==    at 0x4044FE: Scene::addpicture(char const*, int, int, int) (scene.cpp:77)
+==30400==    by 0x41284C: proxy_test::Valgrind3(util::sizedpipestream<512ul>&) (testscene.cpp:450)
+==30400==    by 0x4135D7: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==30400==    by 0x4091AD: proxy::test_execution::child_test() (testimage.cpp:870)
+==30400==    by 0x408BCC: proxy::test_execution::child() (testimage.cpp:755)
+==30400==    by 0x415600: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (testimage.cpp:829)
+==30400==    by 0x409031: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (testimage.cpp:810)
+==30400==    by 0x407EB6: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (testimage.cpp:571)
+==30400==    by 0x407DBE: proxy::RunTests::run_single_test(char const*) (testimage.cpp:559)
+==30400==    by 0x407C26: proxy::RunTests::execute_by_mode() (testimage.cpp:544)
+==30400==    by 0x407BD7: proxy::RunTests::execute() (testimage.cpp:535)
+==30400==    by 0x407373: main (testimage.cpp:425)
+==30400==  Address 0x4c8384c is 4 bytes after a block of size 8 alloc'd
+==30400==    at 0x4A0674C: operator new[](unsigned long) (vg_replace_malloc.c:305)
+==30400==    by 0x40420E: Scene::Scene(int) (scene.cpp:16)
+==30400==    by 0x412770: proxy_test::Valgrind3(util::sizedpipestream<512ul>&) (testscene.cpp:443)
+==30400==    by 0x4135D7: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==30400==    by 0x4091AD: proxy::test_execution::child_test() (testimage.cpp:870)
+==30400==    by 0x408BCC: proxy::test_execution::child() (testimage.cpp:755)
+==30400==    by 0x415600: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (testimage.cpp:829)
+==30400==    by 0x409031: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (testimage.cpp:810)
+==30400==    by 0x407EB6: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (testimage.cpp:571)
+==30400==    by 0x407DBE: proxy::RunTests::run_single_test(char const*) (testimage.cpp:559)
+==30400==    by 0x407C26: proxy::RunTests::execute_by_mode() (testimage.cpp:544)
+==30400==    by 0x407BD7: proxy::RunTests::execute() (testimage.cpp:535)
+==30400== 
+==30400== Invalid write of size 4
+==30400==    at 0x404519: Scene::addpicture(char const*, int, int, int) (scene.cpp:78)
+==30400==    by 0x41284C: proxy_test::Valgrind3(util::sizedpipestream<512ul>&) (testscene.cpp:450)
+==30400==    by 0x4135D7: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==30400==    by 0x4091AD: proxy::test_execution::child_test() (testimage.cpp:870)
+==30400==    by 0x408BCC: proxy::test_execution::child() (testimage.cpp:755)
+==30400==    by 0x415600: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (testimage.cpp:829)
+==30400==    by 0x409031: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (testimage.cpp:810)
+==30400==    by 0x407EB6: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (testimage.cpp:571)
+==30400==    by 0x407DBE: proxy::RunTests::run_single_test(char const*) (testimage.cpp:559)
+==30400==    by 0x407C26: proxy::RunTests::execute_by_mode() (testimage.cpp:544)
+==30400==    by 0x407BD7: proxy::RunTests::execute() (testimage.cpp:535)
+==30400==    by 0x407373: main (testimage.cpp:425)
+==30400==  Address 0x4c8389c is 4 bytes after a block of size 8 alloc'd
+==30400==    at 0x4A0674C: operator new[](unsigned long) (vg_replace_malloc.c:305)
+==30400==    by 0x40422A: Scene::Scene(int) (scene.cpp:17)
+==30400==    by 0x412770: proxy_test::Valgrind3(util::sizedpipestream<512ul>&) (testscene.cpp:443)
+==30400==    by 0x4135D7: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==30400==    by 0x4091AD: proxy::test_execution::child_test() (testimage.cpp:870)
+==30400==    by 0x408BCC: proxy::test_execution::child() (testimage.cpp:755)
+==30400==    by 0x415600: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (testimage.cpp:829)
+==30400==    by 0x409031: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (testimage.cpp:810)
+==30400==    by 0x407EB6: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (testimage.cpp:571)
+==30400==    by 0x407DBE: proxy::RunTests::run_single_test(char const*) (testimage.cpp:559)
+==30400==    by 0x407C26: proxy::RunTests::execute_by_mode() (testimage.cpp:544)
+==30400==    by 0x407BD7: proxy::RunTests::execute() (testimage.cpp:535)
+==30400== 
+==30400== Invalid read of size 8
+==30400==    at 0x404597: Scene::changelayer(int, int) (scene.cpp:91)
+==30400==    by 0x412862: proxy_test::Valgrind3(util::sizedpipestream<512ul>&) (testscene.cpp:451)
+==30400==    by 0x4135D7: monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (monad_shared.h:72)
+==30400==    by 0x4091AD: proxy::test_execution::child_test() (testimage.cpp:870)
+==30400==    by 0x408BCC: proxy::test_execution::child() (testimage.cpp:755)
+==30400==    by 0x415600: int proxy::fork_execute<proxy::test_execution>(proxy::test_execution&) (testimage.cpp:829)
+==30400==    by 0x409031: proxy::RunTests::execute_test(monad_shared::unit_test_input const&, bool) (testimage.cpp:810)
+==30400==    by 0x407EB6: proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (testimage.cpp:571)
+==30400==    by 0x407DBE: proxy::RunTests::run_single_test(char const*) (testimage.cpp:559)
+==30400==    by 0x407C26: proxy::RunTests::execute_by_mode() (testimage.cpp:544)
+==30400==    by 0x407BD7: proxy::RunTests::execute() (testim
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 46
+
